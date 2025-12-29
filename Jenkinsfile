@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+
+        node {
+            label 'agent-1'
+        }
+    }
     stages {
         stage('Build'){
             steps {
@@ -15,6 +20,11 @@ pipeline {
             steps {
                 echo "Deploying"
             }
+        }
+   }
+   post {
+        always{
+            echo 'I will always say hello again'
         }
    }
 }
