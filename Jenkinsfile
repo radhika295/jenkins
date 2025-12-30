@@ -58,7 +58,6 @@ pipeline {
             when { 
                 expression { "$params.DEPLOY" == "true" }
             }
-             }
             steps {
                  script{
                     sh """
@@ -83,3 +82,4 @@ pipeline {
             echo 'pipeline is timedout'
         }
    }
+}
